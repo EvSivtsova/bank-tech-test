@@ -30,6 +30,20 @@ describe BankAccount do
       bank_account.withdraw(1000, '10-01-2023')
       expect(bank_account.get_transactions[0]).to include({date: '10-01-2023', value: -1000})
     end
+
+    it "updates the balance" do
+      bank_account = BankAccount.new
+      bank_account.withdraw(1000)
+      expect(bank_account.get_balance).to eq -1000
+    end
+    
+    it "updates the balance when several transaction have been made" do
+      bank_account = BankAccount.new
+      bank_account.withdraw(1000)
+      bank_account.withdraw(500)
+      expect(bank_account.get_balance).to eq -1500
+    end
+ 
   end
   
   context "when both depositing and withdrawing money" do
@@ -45,6 +59,14 @@ describe BankAccount do
       expect(bank_account.get_transactions[2]).to include({date: '12-01-2023', value: 3000})
       expect(bank_account.get_transactions[3]).to include({date: '13-01-2023', value: -2000})
     end
+
+    it "updates the balance" do
+      bank_account = BankAccount.new
+      bank_account.deposit(1000)
+      bank_account.withdraw(500)
+      bank_account.deposit(3000)
+      bank_account.withdraw(2000)
+      expect(bank_account.get_balance).to eq 1500
+    end
   end
- 
 end

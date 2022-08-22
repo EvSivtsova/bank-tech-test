@@ -8,10 +8,11 @@ class BankAccount
     @transactions.push({date: date, value: value})
     @balance += value
   end
-
+  
   def withdraw(value, date = Time.new().strftime('%d-%m-%Y'));
     value = -(value)
     @transactions.push({date: date, value: value})
+    @balance += value
   end
 
   def get_transactions
