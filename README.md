@@ -55,7 +55,7 @@ To run tests and lint the code use:
 
 `rubocop`
 
-# Code design
+## Code design
 
 There is one class BankAccount with three public methods:
   * deposit and withdraw methods register and store the transactions in memory 
