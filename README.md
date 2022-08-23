@@ -45,7 +45,7 @@ Technologies used:
 * Rubocop(Linter)
 * Simplecov(Test Coverage)
 
-To install the project clone the repository and install node.js and the dependencies within bankTechTest folder:
+To install the project clone the repository and run `bundle install` to install the dependencies within bankTechTest folder:
 
 ```
 git clone https://github.com/EvSivtsova/bank_tech_test.git
