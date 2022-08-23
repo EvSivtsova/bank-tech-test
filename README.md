@@ -38,12 +38,19 @@ _So that I could keep the records of all the transaction_<br>
 
 ## TechBit
 
+Technologies used: 
+* Ruby(3.0.0)
+* RVM
+* Rspec(Testing)
+* Rubocop(Linter)
+* Simplecov(Test Coverage)
+
 To install the project clone the repository and install node.js and the dependencies within bankTechTest folder:
 
 ```
 git clone https://github.com/EvSivtsova/bank_tech_test.git
 cd bank_test_tech
-gem install bundler
+bundle install
 ```
 To run the file and print the bank statement required:
 
