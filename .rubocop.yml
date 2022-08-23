@@ -1,0 +1,14 @@
+# .rubocop.yml
+
+Style/Documentation:
+  Enabled: false
+
+Style/FrozenStringLiteralComment:
+  Enabled: false
+
+Metrics/BlockLength:
+  IgnoredMethods: ['describe', 'context']
+
+AllCops:
+  Exclude:
+    - 'spec/spec_helper.rb'
