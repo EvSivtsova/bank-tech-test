@@ -51,3 +51,11 @@ class BankAccount
     end
   end
 end
+
+if __FILE__ == $0
+  bank_account = BankAccount.new(Kernel)
+  bank_account.deposit(1000, '10/01/2023')
+  bank_account.deposit(2000, '13/01/2023')
+  bank_account.withdraw(500, '14/01/2023')
+  bank_account.get_bank_statement
+ end 
