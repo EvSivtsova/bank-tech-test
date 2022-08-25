@@ -66,12 +66,12 @@ To run tests and lint the code use:
 
 There is one class BankAccount with three public methods:
   * deposit and withdraw methods register and store the transactions in memory 
-  * bank_statement method provide a record of all the transactions in required format:
+  * bank_statement method provides a record of all the transactions in required format:
 
 <img src="https://github.com/EvSivtsova/bank_tech_test/blob/main/bank_tech_test_final_output.png" width='500'>
 
-BankAccount transactions and balance variables were made initially public to simplify class behaviour testing and then made private. Tests have amended to reflect that change.
+BankAccount transactions and balance variables were made initially public to simplify class behaviour testing and then made private to protect the data. Tests have been amended to reflect that change.
 
-Private methods address the formatting of the data. 
+The class allows for manual input of transaction values. A possibility to input dates has also been added in order to produce required output of the test tech. Methods to validate data inputs have been TDD'd.
 
-The data can be easily accessed either by calling bank_statement method or using attribute accessors depending on the format required, as well as the purpose (read variable `balance` to access the current balance of your bank account).
+Private methods address the formatting of the data and input validation. 

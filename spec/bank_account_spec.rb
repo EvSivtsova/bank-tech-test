@@ -74,4 +74,38 @@ describe BankAccount do
       bank_account.bank_statement
     end
   end
+
+  context 'when inputing data manually' do
+    it 'raises error when date is incorrect' do
+      io = double :io
+      bank_account = BankAccount.new(io)
+      expect { bank_account.deposit(1000, '17/01/2023') }.to_not raise_error
+      expect { bank_account.deposit(1000, '10-06-2023') }
+        .to raise_error 'Please insert date in the following format: DD/MM/YY'
+      expect { bank_account.deposit(1000, '2023-06-10') }
+        .to raise_error 'Please insert date in the following format: DD/MM/YY'
+      expect { bank_account.deposit(1000, 'date') }.to raise_error(Date::Error)
+
+      expect { bank_account.withdraw(500, '14/01/2023') }.to_not raise_error
+      expect { bank_account.withdraw(1000, '10-06-2023') }
+        .to raise_error 'Please insert date in the following format: DD/MM/YY'
+      expect { bank_account.withdraw(1000, '2023-06-10') }
+        .to raise_error 'Please insert date in the following format: DD/MM/YY'
+      expect { bank_account.withdraw(1000, 'date') }.to raise_error(Date::Error)
+    end
+
+    it 'raises error when value of transaction is not a number' do
+      io = double :io
+      bank_account = BankAccount.new(io)
+      expect { bank_account.deposit(1000, '17/01/2023') }.to_not raise_error
+      expect { bank_account.deposit(1000.34, '17/01/2023') }.to_not raise_error
+      expect { bank_account.deposit('transaction', '17/01/2023') }
+        .to raise_error 'Transaction value must be a positive number'
+
+      expect { bank_account.withdraw(500, '14/01/2023') }.to_not raise_error
+      expect { bank_account.withdraw(500.55, '14/01/2023') }.to_not raise_error
+      expect { bank_account.withdraw('transaction', '14/01/2023') }
+        .to raise_error 'Transaction value must be a positive number'
+    end
+  end
 end
