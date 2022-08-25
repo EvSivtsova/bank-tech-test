@@ -1,4 +1,4 @@
-require 'bank_account'
+require_relative '../bank_account'
 
 describe BankAccount do
   before :each do
@@ -95,6 +95,11 @@ describe BankAccount do
       expect { @bank_account.withdraw(500.55, '14/01/2023') }.to_not raise_error
       expect { @bank_account.withdraw('transaction', '14/01/2023') }
         .to raise_error 'Transaction value must be a positive number'
+    end
+
+    it 'raises argument error if parameters are missing' do
+      expect { @bank_account.deposit }.to raise_error(ArgumentError)
+      expect { @bank_account.withdraw }.to raise_error(ArgumentError)
     end
   end
 end

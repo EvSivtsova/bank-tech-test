@@ -54,7 +54,7 @@ bundle install
 ```
 To run the file and print the bank statement required:
 
-`ruby lib/bank_account.rb`
+`ruby bank_account.rb`
 
 To run tests and lint the code use:
 
@@ -64,14 +64,19 @@ To run tests and lint the code use:
 
 ## Code design
 
-There is one class BankAccount with three public methods:
+There are three classe BankAccount, BankStatement and InputValidation
+
+BankAccount class has three public methods:
   * deposit and withdraw methods register and store the transactions in memory 
-  * bank_statement method provides a record of all the transactions in required format:
+  * bank_statement method hold the instance of BankStatement class, which use the BancAccount data to output a record of all the transactions in required format.
+  * 
 
 <img src="https://github.com/EvSivtsova/bank_tech_test/blob/main/bank_tech_test_final_output.png" width='500'>
 
 BankAccount transactions and balance variables were made initially public to simplify class behaviour testing and then made private to protect the data. Tests have been amended to reflect that change.
 
-The class allows for manual input of transaction values. A possibility to input dates has also been added in order to produce required output of the test tech. Methods to validate data inputs have been TDD'd.
+The BankAccount class allows for manual input of transaction values. A possibility to input dates has also been added in order to produce required output of the test tech. 
+
+BankStatement and InputValidation were initially part of BankAccount classe but were extracted in line with Single Responsibility Principle. The tests have been amended to reflect that change.
 
 Private methods address the formatting of the data and input validation. 
