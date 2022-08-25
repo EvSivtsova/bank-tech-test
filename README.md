@@ -70,6 +70,8 @@ There is one class BankAccount with three public methods:
 
 <img src="https://github.com/EvSivtsova/bank_tech_test/blob/main/bank_tech_test_final_output.png" width='500'>
 
-Private methods address the formatting of the data.
+BankAccount transactions and balance variables were made initially public to simplify class behaviour testing and then made private. Tests have amended to reflect that change.
+
+Private methods address the formatting of the data. 
 
 The data can be easily accessed either by calling bank_statement method or using attribute accessors depending on the format required, as well as the purpose (read variable `balance` to access the current balance of your bank account).

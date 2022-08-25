@@ -1,6 +1,4 @@
 class BankAccount
-  attr_accessor :transactions, :balance
-
   def initialize(io)
     @transactions = []
     @balance = 0
