@@ -12,7 +12,8 @@ class BankStatement
   private
 
   def input_validation(transactions)
-    raise 'Please provide an array of transactions in required format' if transactions.nil? || transactions.empty?
+    return unless transactions.nil? || transactions.empty?
+    raise 'Please provide an array of transactions in required format'
   end
 
   def bank_statement_header
@@ -32,6 +33,7 @@ class BankStatement
   end
 
   def balance_formatted(transaction)
-    !transaction[:balance].nil? ? format('%.2f', transaction[:balance]) : '0.00'
+    # !transaction[:balance].nil? ? format('%.2f', transaction[:balance]) : '0.00'
+    transaction[:balance].nil? ? '0.00' : format('%.2f', transaction[:balance])
   end
 end

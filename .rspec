@@ -1,1 +1,6 @@
 --require spec_helper
+/**/.DS_Store
+/coverage
+
+# Local cache of Rubocop remote config
+.rubocop-*
