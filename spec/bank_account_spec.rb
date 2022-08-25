@@ -60,5 +60,18 @@ describe BankAccount do
       bank_account.withdraw(500, '14/01/2023')
       bank_account.bank_statement
     end
+
+    it 'sorts the transactions by date from latest to earliest' do
+      io = double :io
+      expect(io).to receive(:puts).with('date || credit || debit || balance').ordered
+      expect(io).to receive(:puts).with('14/01/2023 || || 500.00 || 2500.00').ordered
+      expect(io).to receive(:puts).with('13/01/2023 || 2000.00 || || 3000.00').ordered
+      expect(io).to receive(:puts).with('10/01/2023 || 1000.00 || || 1000.00').ordered
+      bank_account = BankAccount.new(io)
+      bank_account.deposit(1000, '10/01/2023')
+      bank_account.withdraw(500, '14/01/2023')
+      bank_account.deposit(2000, '13/01/2023')
+      bank_account.bank_statement
+    end
   end
 end
