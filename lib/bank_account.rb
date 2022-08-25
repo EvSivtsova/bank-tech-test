@@ -17,11 +17,14 @@ class BankAccount
   end
 
   def bank_statement
+    data_for_bank_statement
     bank_statement_header
     bank_statement_body
   end
 
   private
+
+  # Data validation
 
   def input_valid?(value, date)
     @error = nil
@@ -42,28 +45,32 @@ class BankAccount
     @error = 'Please insert date in the following format: DD/MM/YY'
   end
 
-  def transactions_sorted_by_date
-    @transactions = @transactions.sort_by { |transaction| transaction[:date] }
-  end
+  # Data manipulation
 
-  def balance_update
+  def update_account_balance
     count = 0
     previous_balance = 0
-    @transactions.each do |transaction|
+    sorted_transations = @transactions.sort_by { |transaction| transaction[:date] }
+    @transactions = sorted_transations.each do |transaction|
       transaction[:balance] = transaction[:value] + previous_balance
       count += 1
-      previous_balance = @transactions[count - 1][:balance]
+      previous_balance = sorted_transations[count - 1][:balance]
     end
   end
+
+  def data_for_bank_statement
+    update_account_balance
+    @transactions = @transactions.reverse
+  end
+
+  # Bank statement formatting
 
   def bank_statement_header
     @io.puts 'date || credit || debit || balance'
   end
 
   def bank_statement_body
-    transactions_sorted_by_date
-    balance_update
-    @transactions.reverse.map do |transaction|
+    @transactions.map do |transaction|
       @io.puts "#{transaction[:date]} #{debit_or_credit(transaction)} #{balance_formatted(transaction)}"
     end
   end
