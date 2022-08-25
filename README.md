@@ -67,9 +67,8 @@ To run tests and lint the code use:
 There are three classe BankAccount, BankStatement and InputValidation
 
 BankAccount class has three public methods:
-  * deposit and withdraw methods register and store the transactions in memory 
-  * bank_statement method hold the instance of BankStatement class, which use the BancAccount data to output a record of all the transactions in required format.
-  * 
+  * deposit and withdraw methods register and store the transactions in memory . These methods hold the instance of InputValidation class.
+  * bank_statement method hold the instance of BankStatement class, which use the BancAccount data to output a record of all the transactions in required format
 
 <img src="https://github.com/EvSivtsova/bank_tech_test/blob/main/bank_tech_test_final_output.png" width='500'>
 
