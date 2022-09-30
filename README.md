@@ -83,7 +83,7 @@ BankAccount transactions and balance variables were made initially public to sim
 
 The BankAccount class allows for manual input of transaction values. A possibility to input dates has also been added in order to produce required output of the test tech. 
 
-BankStatement and InputValidation were initially part of BankAccount classe but were extracted in line with Single Responsibility Principle. The tests have been amended to reflect that change.
+BankStatement and InputValidation were initially part of BankAccount class but were extracted in line with Single Responsibility Principle. The tests have been amended to reflect that change.
 
 Private methods address the formatting of the data and input validation. 
 
