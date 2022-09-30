@@ -1,5 +1,12 @@
 # Bank Tech Test
 
+<div align="left">
+  <img alt="GitHub top language" src="https://img.shields.io/github/languages/top/EvSivtsova/bank_tech_test">
+</div>
+<div align="left">
+  <img src="https://img.shields.io/badge/Test_coverage:_97.86-blue?style=for-the-badge&logo=Rspec&logoColor=white" alt="Rspec"/>
+</div><br>
+
 This is Makers' Academy challenge with the following requirements:
 
 ### Requirements
@@ -79,3 +86,5 @@ The BankAccount class allows for manual input of transaction values. A possibili
 BankStatement and InputValidation were initially part of BankAccount classe but were extracted in line with Single Responsibility Principle. The tests have been amended to reflect that change.
 
 Private methods address the formatting of the data and input validation. 
+
+Test coverage: 97.86%
