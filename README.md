@@ -1,13 +1,12 @@
 # Bank Tech Test
 
 <div align="left">
-  <img alt="GitHub top language" src="https://img.shields.io/github/languages/top/EvSivtsova/bank_tech_test">
-</div>
-<div align="left">
+  <img src="https://img.shields.io/badge/ruby-%23CC342D.svg?style=for-the-badge&logo=ruby&logoColor=white"/>&nbsp
+  <img src="https://img.shields.io/badge/RSpec-blue?style=for-the-badge&logo=Rspec&logoColor=white" alt="Rspec"/>
   <img src="https://img.shields.io/badge/Test_coverage:_97.86-blue?style=for-the-badge&logo=Rspec&logoColor=white" alt="Rspec"/>
 </div><br>
 
-This is Makers' Academy challenge with the following requirements:
+This is a Makers' Academy challenge with the following requirements:
 
 ### Requirements
 
@@ -24,8 +23,7 @@ This is Makers' Academy challenge with the following requirements:
 * When she prints her bank statement
 * Then she would see
 
-<img src="https://github.com/EvSivtsova/bank_tech_test/blob/main/bank_tech_test_required_output.png" width='350'>
-  
+<img src="https://github.com/EvSivtsova/bank_tech_test/blob/main/outputs/bank_tech_test_required_output.png" width='350'>
   
 ## User stories
 
@@ -52,11 +50,11 @@ Technologies used:
 * Rubocop(Linter)
 * Simplecov(Test Coverage)
 
-To install the project clone the repository and run `bundle install` to install the dependencies within bankTechTest folder:
+To install the project, clone the repository and run `bundle install` to install the dependencies within bankTechTest folder:
 
 ```
 git clone https://github.com/EvSivtsova/bank_tech_test.git
-cd bank_test_tech
+cd bank-test-tech
 bundle install
 ```
 To run the file and print the bank statement required:
@@ -77,7 +75,7 @@ BankAccount class has three public methods:
   * deposit and withdraw methods register and store the transactions in memory . These methods hold the instance of InputValidation class.
   * bank_statement method hold the instance of BankStatement class, which use the BancAccount data to output a record of all the transactions in required format
 
-<img src="https://github.com/EvSivtsova/bank_tech_test/blob/main/bank_tech_test_final_output.png" width='500'>
+<img src="https://github.com/EvSivtsova/bank_tech_test/blob/main/outputs/bank_tech_test_final_output.png" width='500'>
 
 BankAccount transactions and balance variables were made initially public to simplify class behaviour testing and then made private to protect the data. Tests have been amended to reflect that change.
 
@@ -87,4 +85,4 @@ BankStatement and InputValidation were initially part of BankAccount class but w
 
 Private methods address the formatting of the data and input validation. 
 
-Test coverage: 97.86%
+<img src="https://github.com/EvSivtsova/bank_tech_test/blob/main/outputs/bank_tech_test_coverage.png" width='500'>
