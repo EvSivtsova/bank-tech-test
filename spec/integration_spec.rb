@@ -7,6 +7,10 @@ describe BankAccount do
   end
 
   context 'when depositing money' do
+    it 'is an instance of BankAccount class' do
+      expect(@bank_account).to be_instance_of(BankAccount)
+    end
+
     it 'records and returns the value and the date of the transactions' do
       expect(@io).to receive(:puts).with('date || credit || debit || balance').ordered
       expect(@io).to receive(:puts).with('10/01/2023 || 1000.00 || || 1000.00').ordered
