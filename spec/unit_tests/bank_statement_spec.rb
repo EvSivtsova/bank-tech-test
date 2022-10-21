@@ -6,6 +6,10 @@ describe BankStatement do
     @input_validation = BankStatement.new(@io)
   end
 
+  it 'is an instance of BankStatement class' do
+    expect(@input_validation).to be_instance_of(BankStatement)
+  end
+
   it 'provides a list of transactions with updated balance sorted by date in reverse order' do
     transactions = [
       { date: '14/01/2023', value: -500, balance: 2500 },
