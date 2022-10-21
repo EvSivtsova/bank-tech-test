@@ -3,11 +3,11 @@ require 'bank_statement'
 describe BankStatement do
   before :each do
     @io = double :io
-    @input_validation = BankStatement.new(@io)
+    @bank_statement = BankStatement.new(@io)
   end
 
   it 'is an instance of BankStatement class' do
-    expect(@input_validation).to be_instance_of(BankStatement)
+    expect(@bank_statement).to be_instance_of(BankStatement)
   end
 
   it 'provides a list of transactions with updated balance sorted by date in reverse order' do
@@ -20,12 +20,12 @@ describe BankStatement do
     expect(@io).to receive(:puts).with('14/01/2023 || || 500.00 || 2500.00').ordered
     expect(@io).to receive(:puts).with('13/01/2023 || 2000.00 || || 3000.00').ordered
     expect(@io).to receive(:puts).with('10/01/2023 || 1000.00 || || 1000.00').ordered
-    @input_validation.bank_statement_formatted(transactions)
+    @bank_statement.bank_statement_formatted(transactions)
   end
 
   it 'raises error if there is no data available' do
     transactions = []
-    expect { @input_validation.bank_statement_formatted(transactions) }
+    expect { @bank_statement.bank_statement_formatted(transactions) }
       .to raise_error 'Please provide an array of transactions in required format'
   end
 end
