@@ -7,6 +7,10 @@ describe BankAccount do
     @input_validation = instance_double("InputValidation")
   end
 
+  it 'is an instance of BankAccount class' do
+    expect(@bank_account).to be_instance_of(BankAccount)
+  end
+ 
   context 'when both depositing and withdrawing money' do
     it 'provides a list of transactions with updated balance sorted by date in reverse order' do
       time_double = Time.new(2023, 1, 10, 16, 21, 12).strftime('%d/%m/%Y')
